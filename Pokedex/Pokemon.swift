@@ -7,16 +7,21 @@
 
 import Foundation
 import UIKit
-class Pokemon {
-    var image: UIImage
-    var name: String
-    var num: String
-    var type: String
-    
-    init(num: String, name: String, type: String, image: UIImage) {
-        self.num = num
-        self.name = name
-        self.type = type
-        self.image = image
-    }
+
+// MARK: - Pokemon Data
+struct PokemonData: Decodable {
+    let pokemon: [Pokemon]
+}
+
+// MARK: - Pokemon
+struct Pokemon: Decodable {
+    let id: Int
+    let num, name: String
+    let img: String
+    let type: [String]
+}
+
+// MARK: - NextEvolution
+struct NextEvolution: Decodable {
+    let num, name: String
 }

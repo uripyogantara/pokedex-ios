@@ -15,29 +15,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pokemons = createArray()
-        pokemonTableView.delegate = self
-        pokemonTableView.dataSource = self
-        btn.addShadow(shadowColor: UIColor(named: "ColorYellowShadow")!, shadowRadius: 10.0)
-        
+        fetchApi()
     }
-
-    func createArray() -> [Pokemon] {
-        var tempPokemon: [Pokemon] = []
+    
+    func fetchApi(){
+        let baseUrl = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
+        print(baseUrl)
+        guard let url = URL(string: baseUrl) else { return  }
         
-        tempPokemon.append(Pokemon(num: "001", name: "Bulbasaur", type: "Grass", image: Images.bulbasaur))
-        tempPokemon.append(Pokemon(num: "002", name: "Ivysaur", type: "Grass", image: Images.ivysaur))
-        tempPokemon.append(Pokemon(num: "003", name: "Venusaur", type: "Grass", image: Images.venusaur))
-        tempPokemon.append(Pokemon(num: "004", name: "Charmander", type: "Fire", image: Images.charmander))
-        tempPokemon.append(Pokemon(num: "005", name: "Charmeleon", type: "Fire", image: Images.charmeleon))
-        tempPokemon.append(Pokemon(num: "006", name: "Charizard", type: "Fire", image: Images.charizard))
-        tempPokemon.append(Pokemon(num: "007", name: "Squirtle", type: "Water", image: Images.squirtle))
-        tempPokemon.append(Pokemon(num: "008", name: "Wartortle", type: "Water", image: Images.wartortle))
-        tempPokemon.append(Pokemon(num: "009", name: "Blastoise", type: "Water", image: Images.blastoise))
-        tempPokemon.append(Pokemon(num: "010", name: "Caterpie", type: "Bug", image: Images.caterpie))
-        tempPokemon.append(Pokemon(num: "011", name: "Metapod", type: "Bug", image: Images.metapod))
-        
-        return tempPokemon
+        URLSession.shared.dataTask(with: url){ (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let pokemonsResult: PokemonData = try JSONDecoder().decode(PokemonData.self, from: data)
+                print(pokemonsResult)
+                self.pokemons = pokemonsResult.pokemon
+                DispatchQueue.main.async {
+                   self.pokemonTableView.delegate = self
+                   self.pokemonTableView.dataSource = self
+                }
+            } catch let error {
+                print("Error fetch data: ", error)
+            }
+        }.resume()
     }
 }
 
