@@ -8,39 +8,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var pokemonTableView: UITableView!
+    @IBOutlet var pokemonTableView: UITableView!
     @IBOutlet var btn: UIButton!
     
     var pokemons: [Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pokemonTableView.delegate = self
+        pokemonTableView.dataSource = self
         fetchApi()
     }
     
-    func fetchApi(){
+//    automatic reference counting
+    
+    func fetchApi() {
         let baseUrl = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
         print(baseUrl)
-        guard let url = URL(string: baseUrl) else { return  }
+        guard let url = URL(string: baseUrl) else { return }
         
-        URLSession.shared.dataTask(with: url){ (data, response, error) in
-            guard let data = data else { return }
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data, let self = self else { return }
             do {
                 let pokemonsResult: PokemonData = try JSONDecoder().decode(PokemonData.self, from: data)
                 print(pokemonsResult)
                 self.pokemons = pokemonsResult.pokemon
-                DispatchQueue.main.async {
-                   self.pokemonTableView.delegate = self
-                   self.pokemonTableView.dataSource = self
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.pokemonTableView.reloadData()
                 }
-            } catch let error {
+            } catch {
                 print("Error fetch data: ", error)
             }
         }.resume()
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pokemons.count
     }
@@ -50,9 +55,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell") as! PokemonCell
         cell.setPokemon(pokemon: pokemon)
-        
+        cell.selectionStyle = .none
         return cell
     }
-    
-    
 }
