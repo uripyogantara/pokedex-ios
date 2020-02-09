@@ -1,10 +1,10 @@
 # Pokedex IOS
 
-Just a simple ios app 
+Just a simple ios app, fetch API and show on list.
 
 ## UI Design
 
-Design from [Daniel Motta](https://dribbble.com/shots/4862523-Pokedex-iOS-app-Squirtle).
+Design from [Daniel Motta](https://dribbble.com/shots/4862523-Pokedex-iOS-app-Squirtle).\
 ![Home](screenshots/home.png "Home")
 ![Detail](screenshots/detail.png "Detail")
 
