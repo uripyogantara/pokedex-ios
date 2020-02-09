@@ -9,12 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var pokemonTableView: UITableView!
-    @IBOutlet var btn: UIButton!
     
     var pokemons: [Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nib = UINib(nibName: "PokemonTableViewCell", bundle: nil)
+        pokemonTableView.register(nib, forCellReuseIdentifier: "PokemonTableViewCell")
         pokemonTableView.delegate = self
         pokemonTableView.dataSource = self
         fetchApi()
@@ -53,9 +54,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pokemon = pokemons[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell") as! PokemonCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as! PokemonTableViewCell
         cell.setPokemon(pokemon: pokemon)
-        cell.selectionStyle = .none
         return cell
     }
 }

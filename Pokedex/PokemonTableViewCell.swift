@@ -1,19 +1,31 @@
 //
-//  PokemonCell.swift
+//  PokemonTableViewCell.swift
 //  Pokedex
 //
-//  Created by LPT 528 on 2/6/20.
+//  Created by LPT 528 on 2/9/20.
 //
 
 import UIKit
 
-class PokemonCell: UITableViewCell {
-
+class PokemonTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var imagePokemon: UIImageView!
     @IBOutlet weak var pokemonNameLabel: UILabel!
     @IBOutlet weak var pokemonIdLabel: UILabel!
     @IBOutlet weak var pokemonTypeView: UIView!
     @IBOutlet weak var iconPokemonType: UIImageView!
+
+//    @IBOutlet weak var pokemonNumLabel: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
     
     func setPokemon(pokemon: Pokemon){
         
@@ -140,4 +152,5 @@ class PokemonCell: UITableViewCell {
                 return Color.grass
         }
     }
+    
 }

@@ -3,15 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5003E37123EBC30B002A9C7C /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003E37023EBC30B002A9C7C /* PokemonCell.swift */; };
 		5003E37323EBC42F002A9C7C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003E37223EBC42F002A9C7C /* Pokemon.swift */; };
 		5003E37523EBC57C002A9C7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003E37423EBC57C002A9C7C /* Constants.swift */; };
 		50160C9723E94D7D00CB3E07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50160C9623E94D7D00CB3E07 /* DetailViewController.swift */; };
 		50160C9923E9508C00CB3E07 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50160C9823E9508C00CB3E07 /* UIViewExtension.swift */; };
+		501B09D823F04F980006F301 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501B09D723F04F980006F301 /* HomeView.xib */; };
+		501B09DD23F05AF90006F301 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B09DB23F05AF90006F301 /* PokemonTableViewCell.swift */; };
+		501B09DE23F05AF90006F301 /* PokemonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501B09DC23F05AF90006F301 /* PokemonTableViewCell.xib */; };
 		5071256E23E2E5150054BB3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5071256D23E2E5150054BB3B /* AppDelegate.swift */; };
 		5071257023E2E5150054BB3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5071256F23E2E5150054BB3B /* SceneDelegate.swift */; };
 		5071257223E2E5150054BB3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5071257123E2E5150054BB3B /* ViewController.swift */; };
@@ -22,11 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5003E37023EBC30B002A9C7C /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		5003E37223EBC42F002A9C7C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		5003E37423EBC57C002A9C7C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50160C9623E94D7D00CB3E07 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		50160C9823E9508C00CB3E07 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		501B09D723F04F980006F301 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		501B09DB23F05AF90006F301 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
+		501B09DC23F05AF90006F301 /* PokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonTableViewCell.xib; sourceTree = "<group>"; };
 		5071256A23E2E5150054BB3B /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5071256D23E2E5150054BB3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5071256F23E2E5150054BB3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,18 +77,20 @@
 		5071256C23E2E5150054BB3B /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				501B09DB23F05AF90006F301 /* PokemonTableViewCell.swift */,
+				501B09DC23F05AF90006F301 /* PokemonTableViewCell.xib */,
 				5071256D23E2E5150054BB3B /* AppDelegate.swift */,
 				5071257623E2E5180054BB3B /* Assets.xcassets */,
 				50160C9623E94D7D00CB3E07 /* DetailViewController.swift */,
 				5071257B23E2E5180054BB3B /* Info.plist */,
 				5071257823E2E5180054BB3B /* LaunchScreen.storyboard */,
 				5071257323E2E5150054BB3B /* Main.storyboard */,
-				5003E37023EBC30B002A9C7C /* PokemonCell.swift */,
 				5003E37223EBC42F002A9C7C /* Pokemon.swift */,
 				5003E37423EBC57C002A9C7C /* Constants.swift */,
 				5071256F23E2E5150054BB3B /* SceneDelegate.swift */,
 				50160C9823E9508C00CB3E07 /* UIViewExtension.swift */,
 				5071257123E2E5150054BB3B /* ViewController.swift */,
+				501B09D723F04F980006F301 /* HomeView.xib */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -95,7 +101,6 @@
 				B07F19FB669740AF84A5497F /* Pods-Pokedex.debug.xcconfig */,
 				B902F657E35CDF914F3F35C1 /* Pods-Pokedex.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,6 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5071257A23E2E5180054BB3B /* LaunchScreen.storyboard in Resources */,
+				501B09DE23F05AF90006F301 /* PokemonTableViewCell.xib in Resources */,
+				501B09D823F04F980006F301 /* HomeView.xib in Resources */,
 				5071257723E2E5180054BB3B /* Assets.xcassets in Resources */,
 				5071257523E2E5150054BB3B /* Main.storyboard in Resources */,
 			);
@@ -221,13 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501B09DD23F05AF90006F301 /* PokemonTableViewCell.swift in Sources */,
 				5003E37323EBC42F002A9C7C /* Pokemon.swift in Sources */,
 				5071257223E2E5150054BB3B /* ViewController.swift in Sources */,
 				50160C9923E9508C00CB3E07 /* UIViewExtension.swift in Sources */,
 				5071256E23E2E5150054BB3B /* AppDelegate.swift in Sources */,
 				5071257023E2E5150054BB3B /* SceneDelegate.swift in Sources */,
 				50160C9723E94D7D00CB3E07 /* DetailViewController.swift in Sources */,
-				5003E37123EBC30B002A9C7C /* PokemonCell.swift in Sources */,
 				5003E37523EBC57C002A9C7C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
