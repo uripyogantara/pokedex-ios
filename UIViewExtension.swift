@@ -36,3 +36,14 @@ extension UIView{
         layer.shadowOpacity = 1.0
     }
 }
+
+extension UIProgressView{
+    func setColorAndScale(color:UIColor){
+        tintColor = color
+        transform = CGAffineTransform(scaleX: 1, y: 4)
+        layer.cornerRadius = 8.0
+        clipsToBounds = true
+        layer.sublayers![1].cornerRadius = 8.0
+        subviews[1].clipsToBounds = true
+    }
+}

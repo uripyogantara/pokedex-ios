@@ -58,4 +58,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.setPokemon(pokemon: pokemon)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("click at \(indexPath.row)")
+        let detailVc = DetailViewController(nibName: "DetailPokemonView", bundle: nil)
+        detailVc.setPokemon(pokemon:pokemons[indexPath.row])
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
 }
