@@ -15,7 +15,8 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var pokemonTypeView: UIView!
     @IBOutlet weak var iconPokemonType: UIImageView!
 
-//    @IBOutlet weak var pokemonNumLabel: UILabel!
+    @IBOutlet weak var typeStackView: UIStackView!
+    //    @IBOutlet weak var pokemonNumLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,7 +33,7 @@ class PokemonTableViewCell: UITableViewCell {
         pokemonNameLabel.text = pokemon.name
         pokemonIdLabel.text = "#"+pokemon.num
         
-        setPokemonType(type: pokemon.type)
+        setPokemonType(types: pokemon.type)
         
         let stringUrl = pokemon.img.replacingOccurrences(of: "http", with: "https")
         
@@ -56,10 +57,32 @@ class PokemonTableViewCell: UITableViewCell {
         }
     }
     
-    func setPokemonType(type: [String]){
-        let pokemonColor = getColorByType(type: type[0])
-        pokemonTypeView.backgroundColor = pokemonColor
-        pokemonTypeView.addShadow(shadowColor: pokemonColor, shadowRadius: 5.0)
-        iconPokemonType.image = getIconByType(type: type[0])
+    func setPokemonType(types: [String]){
+        for view in typeStackView.subviews {
+            view.removeFromSuperview()
+        }
+        
+        for type in types{
+            let pokemonColor = getColorByType(type: type)
+            let viewType = UIView()
+            let iconPokemon = getIconByType(type: type)
+            let imageView = UIImageView(image: iconPokemon)
+            viewType.backgroundColor = pokemonColor
+            viewType.frame.size.height = 40
+            viewType.frame.size.width = 40
+            viewType.addShadow(shadowColor: pokemonColor, shadowRadius: 5.0)
+            
+            viewType.addSubview(imageView)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            imageView.centerYAnchor.constraint(equalTo: viewType.centerYAnchor).isActive = true
+            imageView.centerXAnchor.constraint(equalTo: viewType.centerXAnchor).isActive = true
+            
+            typeStackView.addArrangedSubview(viewType)
+            
+            viewType.translatesAutoresizingMaskIntoConstraints = false
+            viewType.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+            viewType.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
+        }
     }
 }

@@ -29,6 +29,7 @@
                 <outlet property="sdefProgressView" destination="DfQ-Oo-uq1" id="khk-es-lze"/>
                 <outlet property="spdLabel" destination="M2b-gJ-eXC" id="Zn2-s3-gAR"/>
                 <outlet property="spdProgressView" destination="Aff-4c-kUi" id="8iW-JE-j2N"/>
+                <outlet property="typesStackView" destination="eEs-87-EBy" id="csT-Hn-eRG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="L0X-mZ-3E5"/>
                 <outlet property="viewPokemonType" destination="IVL-Qc-t32" id="Td1-q7-Bn8"/>
                 <outlet property="whiteBackgroundView" destination="qzp-ss-9TD" id="8UQ-Gc-Sjt"/>
@@ -48,33 +49,6 @@
                             <color key="textColor" name="ColorTextPrimary"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVL-Qc-t32">
-                            <rect key="frame" x="152" y="93" width="110" height="30"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageElectric" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-oL-s3y">
-                                    <rect key="frame" x="20" y="7.5" width="15" height="15"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="15" id="LTE-4B-ssy"/>
-                                        <constraint firstAttribute="height" constant="15" id="MIa-zk-H5p"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electric" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shc-gK-ZCc">
-                                    <rect key="frame" x="42" y="8" width="46" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" name="ColorYellow"/>
-                            <constraints>
-                                <constraint firstItem="shc-gK-ZCc" firstAttribute="centerX" secondItem="IVL-Qc-t32" secondAttribute="centerX" constant="10" id="Fl9-vB-6FL"/>
-                                <constraint firstItem="lZP-oL-s3y" firstAttribute="centerY" secondItem="IVL-Qc-t32" secondAttribute="centerY" id="K7o-qV-4ac"/>
-                                <constraint firstAttribute="width" constant="110" id="Kis-OM-DQU"/>
-                                <constraint firstItem="shc-gK-ZCc" firstAttribute="centerY" secondItem="IVL-Qc-t32" secondAttribute="centerY" id="Rkx-DJ-OPQ"/>
-                                <constraint firstItem="lZP-oL-s3y" firstAttribute="leading" secondItem="IVL-Qc-t32" secondAttribute="leading" constant="20" id="dGo-dI-mLK"/>
-                                <constraint firstAttribute="height" constant="30" id="wiz-lG-8tC"/>
-                            </constraints>
-                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEd-uf-Hta">
                             <rect key="frame" x="20" y="138" width="374" height="72"/>
                             <string key="text">Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.</string>
@@ -82,6 +56,41 @@
                             <color key="textColor" name="ColorTextPrimary"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eEs-87-EBy">
+                            <rect key="frame" x="152" y="93" width="110" height="30"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVL-Qc-t32">
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageElectric" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-oL-s3y">
+                                            <rect key="frame" x="20" y="7.5" width="15" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="LTE-4B-ssy"/>
+                                                <constraint firstAttribute="height" constant="15" id="MIa-zk-H5p"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electric" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shc-gK-ZCc">
+                                            <rect key="frame" x="42" y="8" width="46" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="ColorYellow"/>
+                                    <constraints>
+                                        <constraint firstItem="shc-gK-ZCc" firstAttribute="centerX" secondItem="IVL-Qc-t32" secondAttribute="centerX" constant="10" id="Fl9-vB-6FL"/>
+                                        <constraint firstItem="lZP-oL-s3y" firstAttribute="centerY" secondItem="IVL-Qc-t32" secondAttribute="centerY" id="K7o-qV-4ac"/>
+                                        <constraint firstAttribute="width" constant="110" id="Kis-OM-DQU"/>
+                                        <constraint firstItem="shc-gK-ZCc" firstAttribute="centerY" secondItem="IVL-Qc-t32" secondAttribute="centerY" id="Rkx-DJ-OPQ"/>
+                                        <constraint firstItem="lZP-oL-s3y" firstAttribute="leading" secondItem="IVL-Qc-t32" secondAttribute="leading" constant="20" id="dGo-dI-mLK"/>
+                                        <constraint firstAttribute="height" constant="30" id="wiz-lG-8tC"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="mMD-Hs-dvd"/>
+                            </constraints>
+                        </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DUq-YZ-r6j">
                             <rect key="frame" x="20" y="230" width="374" height="40"/>
                             <subviews>
@@ -257,8 +266,6 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="hZS-Q4-Yc2" firstAttribute="top" secondItem="ylY-mN-0NZ" secondAttribute="bottom" constant="10" id="31k-7D-WzG"/>
-                        <constraint firstItem="IVL-Qc-t32" firstAttribute="centerX" secondItem="qzp-ss-9TD" secondAttribute="centerX" id="38J-qR-EJU"/>
-                        <constraint firstItem="IVL-Qc-t32" firstAttribute="top" secondItem="EO6-oS-lN2" secondAttribute="bottom" constant="15" id="4DX-WI-Eym"/>
                         <constraint firstAttribute="trailing" secondItem="eTs-Xm-rTH" secondAttribute="trailing" constant="20" id="61o-a5-pD1"/>
                         <constraint firstAttribute="trailing" secondItem="ylY-mN-0NZ" secondAttribute="trailing" constant="20" id="9VZ-1h-bSt"/>
                         <constraint firstItem="DUq-YZ-r6j" firstAttribute="leading" secondItem="qzp-ss-9TD" secondAttribute="leading" constant="20" id="AkW-II-hfN"/>
@@ -272,7 +279,7 @@
                         <constraint firstItem="hZS-Q4-Yc2" firstAttribute="leading" secondItem="qzp-ss-9TD" secondAttribute="leading" constant="20" id="S98-Qo-OUi"/>
                         <constraint firstItem="yz0-nz-DiZ" firstAttribute="top" secondItem="OT0-1u-kNp" secondAttribute="bottom" constant="10" id="TQm-fK-RjD"/>
                         <constraint firstItem="eTs-Xm-rTH" firstAttribute="leading" secondItem="qzp-ss-9TD" secondAttribute="leading" constant="20" id="UNh-Lu-MXP"/>
-                        <constraint firstItem="OEd-uf-Hta" firstAttribute="top" secondItem="IVL-Qc-t32" secondAttribute="bottom" constant="15" id="WwE-7C-Nfg"/>
+                        <constraint firstItem="eEs-87-EBy" firstAttribute="top" secondItem="EO6-oS-lN2" secondAttribute="bottom" constant="15" id="W7b-cz-Prb"/>
                         <constraint firstAttribute="trailing" secondItem="yz0-nz-DiZ" secondAttribute="trailing" constant="20" id="a65-NZ-L6E"/>
                         <constraint firstItem="XiW-Rk-uU5" firstAttribute="top" secondItem="hZS-Q4-Yc2" secondAttribute="bottom" constant="10" id="aUk-I9-d43"/>
                         <constraint firstItem="yz0-nz-DiZ" firstAttribute="leading" secondItem="qzp-ss-9TD" secondAttribute="leading" constant="20" id="bqi-Wd-ki8"/>
@@ -284,6 +291,8 @@
                         <constraint firstItem="OT0-1u-kNp" firstAttribute="leading" secondItem="qzp-ss-9TD" secondAttribute="leading" constant="20" id="i04-Dh-iN9"/>
                         <constraint firstAttribute="trailing" secondItem="XiW-Rk-uU5" secondAttribute="trailing" constant="20" id="o5u-5n-zHV"/>
                         <constraint firstItem="eTs-Xm-rTH" firstAttribute="top" secondItem="XiW-Rk-uU5" secondAttribute="bottom" constant="10" id="rRk-L0-4cc"/>
+                        <constraint firstItem="eEs-87-EBy" firstAttribute="centerX" secondItem="qzp-ss-9TD" secondAttribute="centerX" id="sed-RI-2vM"/>
+                        <constraint firstItem="OEd-uf-Hta" firstAttribute="top" secondItem="eEs-87-EBy" secondAttribute="bottom" constant="15" id="svm-uP-hY4"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagePikachu" translatesAutoresizingMaskIntoConstraints="NO" id="WgI-0P-ZqC">

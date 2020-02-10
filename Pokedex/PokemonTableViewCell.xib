@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001" translatesAutoresizingMaskIntoConstraints="NO" id="wRj-4D-sYT">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageBulbasaur" translatesAutoresizingMaskIntoConstraints="NO" id="wRj-4D-sYT">
                         <rect key="frame" x="20" y="10" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="VAj-7V-YXz"/>
@@ -41,28 +41,19 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-do-Spy">
-                        <rect key="frame" x="260" y="15" width="40" height="40"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageLeaf" translatesAutoresizingMaskIntoConstraints="NO" id="Fg3-81-DF6">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" name="ColorGreen"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-OR-mwG">
+                        <rect key="frame" x="220" y="15" width="90" height="40"/>
                         <constraints>
-                            <constraint firstItem="Fg3-81-DF6" firstAttribute="centerX" secondItem="GbT-do-Spy" secondAttribute="centerX" id="KD9-Cf-pZC"/>
-                            <constraint firstAttribute="width" constant="40" id="NoJ-x3-I6o"/>
-                            <constraint firstItem="Fg3-81-DF6" firstAttribute="centerY" secondItem="GbT-do-Spy" secondAttribute="centerY" id="bLA-w5-pBY"/>
-                            <constraint firstAttribute="height" constant="40" id="gq7-x0-XGO"/>
+                            <constraint firstAttribute="height" constant="40" id="QdY-Ux-un7"/>
                         </constraints>
-                    </view>
+                    </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XhA-OR-mwG" secondAttribute="trailing" constant="10" id="2Jn-mX-uPF"/>
                     <constraint firstItem="wRj-4D-sYT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ctt-Hk-nqW"/>
                     <constraint firstItem="nw8-ja-gjf" firstAttribute="leading" secondItem="wRj-4D-sYT" secondAttribute="trailing" constant="20" id="Osa-3r-WWL"/>
                     <constraint firstItem="nw8-ja-gjf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UwG-bm-Bp4"/>
-                    <constraint firstAttribute="trailing" secondItem="GbT-do-Spy" secondAttribute="trailing" constant="20" id="W1E-m6-AaG"/>
-                    <constraint firstItem="GbT-do-Spy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bx4-LG-PF3"/>
+                    <constraint firstItem="XhA-OR-mwG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WQF-1g-c1d"/>
                     <constraint firstItem="wRj-4D-sYT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hot-mh-62l"/>
                     <constraint firstItem="wRj-4D-sYT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kib-rV-5yE"/>
                     <constraint firstAttribute="bottom" secondItem="wRj-4D-sYT" secondAttribute="bottom" constant="10" id="psS-nL-A7x"/>
@@ -70,21 +61,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="iconPokemonType" destination="Fg3-81-DF6" id="ZJr-Sd-5md"/>
                 <outlet property="imagePokemon" destination="wRj-4D-sYT" id="mDb-5v-wxJ"/>
                 <outlet property="pokemonIdLabel" destination="iB7-OR-pzo" id="GGE-7x-zvl"/>
                 <outlet property="pokemonNameLabel" destination="Xp1-sc-wJq" id="eDw-WG-9Ai"/>
-                <outlet property="pokemonTypeView" destination="GbT-do-Spy" id="PD0-Hk-fzH"/>
+                <outlet property="typeStackView" destination="XhA-OR-mwG" id="HLI-GZ-mTo"/>
             </connections>
             <point key="canvasLocation" x="139" y="141"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="001" width="120" height="120"/>
-        <image name="ImageLeaf" width="20" height="20"/>
-        <namedColor name="ColorGreen">
-            <color red="0.35294117647058826" green="0.75686274509803919" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="ImageBulbasaur" width="50" height="50"/>
         <namedColor name="ColorTextPrimary">
             <color red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

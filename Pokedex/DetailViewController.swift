@@ -36,6 +36,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var btnMoves: UIButton!
     @IBOutlet weak var spdProgressView: UIProgressView!
     
+    @IBOutlet weak var typesStackView: UIStackView!
     
     
     var pokemonColor: UIColor!
@@ -75,6 +76,8 @@ class DetailViewController: UIViewController {
         satkLabel.textColor = pokemonColor
         sdefLabel.textColor = pokemonColor
         spdLabel.textColor = pokemonColor
+        
+        setPokemonType(types: pokemon.type)
         
         let stringUrl = pokemon.img.replacingOccurrences(of: "http", with: "https")
         
@@ -116,6 +119,49 @@ class DetailViewController: UIViewController {
             DispatchQueue.main.async() {
                 self.pokemonImage.image = UIImage(data: data)
             }
+        }
+    }
+    
+    func setPokemonType(types: [String]){
+        for view in typesStackView.subviews {
+            view.removeFromSuperview()
+        }
+        
+        for type in types{
+            let pokemonColor = getColorByType(type: type)
+            let viewType = UIView()
+            let iconPokemon = getIconByType(type: type)
+            let imageView = UIImageView(image: iconPokemon)
+            let typeLabel = UILabel()
+            
+            viewType.backgroundColor = pokemonColor
+            viewType.frame.size.height = 30
+            viewType.frame.size.width = 110
+            viewType.addShadow(shadowColor: pokemonColor, shadowRadius: 5.0)
+            
+            typeLabel.textColor = .white
+            typeLabel.text = type.uppercased()
+            typeLabel.font = UIFont.boldSystemFont(ofSize: 12.0)
+            
+            viewType.addSubview(imageView)
+            viewType.addSubview(typeLabel)
+            
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.heightAnchor.constraint(equalToConstant: 15).isActive = true
+            imageView.widthAnchor.constraint(equalToConstant: 15).isActive = true
+            
+            imageView.centerYAnchor.constraint(equalTo: viewType.centerYAnchor).isActive = true
+            imageView.leadingAnchor.constraint(equalTo: viewType.leadingAnchor, constant: 20).isActive = true
+            
+            typeLabel.translatesAutoresizingMaskIntoConstraints = false
+            typeLabel.centerYAnchor.constraint(equalTo: viewType.centerYAnchor).isActive = true
+            typeLabel.centerXAnchor.constraint(equalTo: viewType.centerXAnchor, constant: 10).isActive = true
+            
+            typesStackView.addArrangedSubview(viewType)
+            
+            viewType.translatesAutoresizingMaskIntoConstraints = false
+            viewType.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            viewType.widthAnchor.constraint(equalToConstant: 110).isActive = true
         }
     }
 
