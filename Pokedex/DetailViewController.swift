@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
         viewPokemonType.addShadow(shadowColor: pokemonColor, shadowRadius: 5.0)
         viewPokemonType.backgroundColor = pokemonColor
         
-        pokemonTypeLabel.text = pokemon.type[0]
+        pokemonTypeLabel.text = pokemon.type[0].uppercased()
         iconPokemonType.image = getIconByType(type: pokemon.type[0])
         
         hpLabel.textColor = pokemonColor
