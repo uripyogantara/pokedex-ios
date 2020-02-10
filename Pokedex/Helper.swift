@@ -97,3 +97,49 @@ func getColorByType(type: String) -> UIColor {
             return Color.grass
     }
 }
+
+func getColorSecondaryByType(type: String) -> UIColor {
+    let type = type.lowercased()
+    
+    switch type {
+        case "grass":
+            return Color.grassSecondary
+        case "fire":
+            return Color.fireSecondary
+        case "water":
+            return Color.waterSecondary
+        case "bug":
+            return Color.bugSecondary
+        case "normal":
+            return Color.normalSecondary
+        case "dark":
+            return Color.darkSecondary
+        case "dragon":
+            return Color.dragonSecondary
+        case "electric":
+            return Color.electricSecondary
+        case "fairy":
+            return Color.fairySecondary
+        case "fighting":
+            return Color.fightSecondary
+        case "flying":
+            return Color.flySecondary
+        case "ghost":
+            return Color.ghostSecondary
+        case "ground":
+            return Color.groundSecondary
+        case "ice":
+            return Color.iceSecondary
+        case "poison":
+            return Color.poisonSecondary
+        case "psychic":
+            return Color.psychicSecondary
+        case "rock":
+            return Color.rockSecondary
+        case "steal":
+            return Color.steelSecondary
+
+        default:
+            return Color.grassSecondary
+    }
+}

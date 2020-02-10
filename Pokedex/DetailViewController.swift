@@ -39,6 +39,7 @@ class DetailViewController: UIViewController {
     
     
     var pokemonColor: UIColor!
+    var pokemonColorSecondary: UIColor!
     
     private var pokemon:Pokemon!
     
@@ -50,9 +51,10 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         pokemonColor = getColorByType(type: pokemon.type[0])
+        pokemonColorSecondary = getColorSecondaryByType(type: pokemon.type[0])
         
-        view.backgroundColor = pokemonColor
-//        view.setGradientBackground(colorOne: UIColor(named: "ColorYellow")!, colorTwo: UIColor(named: "ColorYellowSecondary")!)
+//        view.backgroundColor = pokemonColor
+        view.setGradientBackground(colorOne: pokemonColor, colorTwo: pokemonColorSecondary)
         pokemonNameLabel.text = pokemon.name
 //
         whiteBackgroundView.layer.cornerRadius = 30
