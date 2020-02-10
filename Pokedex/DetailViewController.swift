@@ -53,17 +53,16 @@ class DetailViewController: UIViewController {
         pokemonColor = getColorByType(type: pokemon.type[0])
         pokemonColorSecondary = getColorSecondaryByType(type: pokemon.type[0])
         
-//        view.backgroundColor = pokemonColor
         view.setGradientBackground(colorOne: pokemonColor, colorTwo: pokemonColorSecondary)
         pokemonNameLabel.text = pokemon.name
-//
+        
         whiteBackgroundView.layer.cornerRadius = 30
-//
+
         btnStats.backgroundColor = pokemonColor
         btnStats.addShadow(shadowColor: pokemonColor, shadowRadius: 5.0)
         btnEvolutions.setTitleColor(pokemonColor, for: .normal)
         btnMoves.setTitleColor(pokemonColor, for: .normal)
-//
+
         viewPokemonType.addShadow(shadowColor: pokemonColor, shadowRadius: 5.0)
         viewPokemonType.backgroundColor = pokemonColor
         
@@ -82,20 +81,12 @@ class DetailViewController: UIViewController {
         let url = URL(string: stringUrl)
         downloadImage(from: url!)
         
-        progressViewHP.setColorAndScale(color: pokemonColor)
-        atkProgressView.setColorAndScale(color: pokemonColor)
-        defProgressView.setColorAndScale(color: pokemonColor)
-        satkProgressView.setColorAndScale(color: pokemonColor)
-        sdefProgressView.setColorAndScale(color: pokemonColor)
-        spdProgressView.setColorAndScale(color: pokemonColor)
-        
-//
-//        progressViewHP.transform = CGAffineTransform(scaleX: 1, y: 4)
-//
-//        progressViewHP.layer.cornerRadius = 8.0
-//        progressViewHP.clipsToBounds = true
-//        progressViewHP.layer.sublayers![1].cornerRadius = 8.0
-//        progressViewHP.subviews[1].clipsToBounds = true
+        progressViewHP.setColorAndScale(color: pokemonColorSecondary)
+        atkProgressView.setColorAndScale(color: pokemonColorSecondary)
+        defProgressView.setColorAndScale(color: pokemonColorSecondary)
+        satkProgressView.setColorAndScale(color: pokemonColorSecondary)
+        sdefProgressView.setColorAndScale(color: pokemonColorSecondary)
+        spdProgressView.setColorAndScale(color: pokemonColorSecondary)
         
         
         // Do any additional setup after loading the view.
